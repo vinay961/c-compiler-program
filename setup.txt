@@ -1,0 +1,30 @@
+
+The `setup.py` file is used for packaging your project and defining metadata about the project. This file is essential if you plan to distribute your project as a package.
+
+```python
+from setuptools import setup, find_packages
+
+setup(
+    name='c-compiler-python',
+    version='0.1.0',
+    description='A simple C compiler implemented in Python',
+    author='Vinay Rai',
+    author_email='vinay100rai@gmail.com',
+    url='https://github.com/vinay961/c-compiler-python',
+    packages=find_packages(where='src'),
+    package_dir={'': 'src'},
+    install_requires=[
+        'ply',
+    ],
+    classifiers=[
+        'Programming Language :: Python :: 3',
+        'License :: OSI Approved :: MIT License',
+        'Operating System :: OS Independent',
+    ],
+    python_requires='>=3.6',
+    entry_points={
+        'console_scripts': [
+            'c-compiler-python=main:main',
+        ],
+    },
+)
